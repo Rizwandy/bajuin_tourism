@@ -1,54 +1,50 @@
-<!-- Content Wrapper -->
-<div id="content-wrapper" class="d-flex flex-column">
-
-  <!-- Main Content -->
-  <div id="content">
-
-    <!-- Topbar -->
-    <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
-
-      <!-- Sidebar Toggle (Topbar) -->
-      <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-        <i class="fa fa-bars"></i>
-      </button>
-
-
-      <p class="ml-auto">
-        <b>
-          <h5>SISTEM INFORMASI WISATA KECAMATAN BAJUIN</h5>
-        </b>
-      </p>
-
-      <!-- Topbar Navbar -->
+  <!-- First Navigation -->
+  <nav class="navbar nav-first navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="assets/imgs/navbar-brand.png" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Pigga Landing page">
+        <span class="pl-2 text-muted">BAJUIN TOURISM</span>
+      </a>
       <ul class="navbar-nav ml-auto">
-
-        <!-- Nav Item - User Information -->
-        <li class="nav-item dropdown no-arrow">
-          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $user['nama_user'] ?></span>
-            <img class="img-profile rounded-circle" src="<?= base_url('assets/img/profile/') . $user['gambar']; ?>">
-          </a>
-          <!-- Dropdown - User Information -->
-          <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-
-            <a class="dropdown-item" href="<?= base_url('kelola_pengguna/profile') ?>">
-              <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-              Profile
-            </a>
-
-            <a class="dropdown-item" href="<?= base_url('kelola_pengguna/ubah_password') ?>">
-              <i class="fas fa-key fa-sm fa-fw mr-2 text-gray-400"></i>
-              Ubah Password
-            </a>
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-              <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-              Keluar
-            </a>
-
-          </div>
+        <li class="nav-item">
+          <a class="nav-link text-primary" href="#home">Website : <span class="pl-2 text-muted">Dinas Pariwisata Tanah Laut</span></a>
         </li>
-
       </ul>
-
-    </nav>
-    <!-- End of Topbar -->
+    </div>
+  </nav>
+  <!-- End of First Navigation -->
+  <!-- Second Navigation -->
+  <nav class="nav-second navbar custom-navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">BERANDA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#wisata">DESTINASI</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#acara">ACARA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tentang">TENTANG</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('login') ?>">LOGIN</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="btn btn-primary btn-sm scroll-to-top rounded" href="#join">
+              JOIN US
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Of Second Navigation -->
