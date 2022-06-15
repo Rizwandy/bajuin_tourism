@@ -2,7 +2,7 @@
   <nav class="navbar nav-first navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="assets/imgs/navbar-brand.png" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Pigga Landing page">
+        <img src="<?= base_url('assets/imgs/') ?>navbar-brand.png" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Pigga Landing page">
         <span class="pl-2 text-muted">BAJUIN TOURISM</span>
       </a>
       <ul class="navbar-nav ml-auto">

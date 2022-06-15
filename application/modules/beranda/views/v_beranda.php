@@ -5,7 +5,7 @@
     <h1 class="subtitle">Selamat Datang di</h1>
     <h1 class="title">BAJUIN TOURISM</h1>
     <p>Bajuin Tourism merupakan sebuah media penyedia informasi terlengkap tentang wisata yang ada di kecamatan Bajuin</p>
-    <a class="btn btn-primary mt-3" href="#wisata">JELAJAHI</a>
+    <a class="btn btn-primary mt-3" href="<?= base_url('beranda/wisata') ?>">JELAJAHI</a>
   </div>
 </header>
 <!-- End Of Page Header -->
@@ -32,34 +32,26 @@
 <!-- Wisata Section -->
 <section id="wisata">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <h6 class="section-subtitle">Wisata</h6>
-        <h3 class="section-title">Air Terjun Bajuin</h3>
-        <p class="mb-1 font-weight-bold">Senin - Kamis : <span class="font-weight-normal pl-2 text-muted">09:00 - 15:00 WITA</span></p>
-        <p class="mb-1 font-weight-bold">Jum'at : <span class="font-weight-normal pl-2 text-muted">02:00 - 16:00 WITA</span></p>
-        <p class="mb-1 font-weight-bold">Sabtu - Minggu : <span class="font-weight-normal pl-2 text-muted">09:00 - 17:00 WITA</span></p>
-        <a href="#book-table" class="btn btn-primary btn-sm w-md mt-4">Selengkapnya</a>
-      </div>
-      <div class="col-md-6">
-        <img alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Pigga Landing page" src="assets/imgs/arter1.jpg" class="w-100 rounded shadow">
-      </div>
-    </div>
-    <div class="section-devider my-6 transparent"></div>
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <h6 class="section-subtitle">Wisata</h6>
-        <h3 class="section-title">River Tubing</h3>
-        <p class="mb-1 font-weight-bold">Senin - Kamis : <span class="font-weight-normal pl-2 text-muted">09:00 - 15:00 WITA</span></p>
-        <p class="mb-1 font-weight-bold">Jum'at : <span class="font-weight-normal pl-2 text-muted">02:00 - 16:00 WITA</span></p>
-        <p class="mb-1 font-weight-bold">Sabtu - Minggu : <span class="font-weight-normal pl-2 text-muted">09:00 - 17:00 WITA</span></p>
+    <?php
+    foreach ($view->result() as $res) :
+    ?>
+      <div class="row align-items-center">
+        <div class="col-md-6">
 
-        <a href="#book-table" class="btn btn-primary btn-sm w-md mt-4">Selengkapnya</a>
+          <h6 class="section-subtitle">Wisata</h6>
+          <h3 class="section-title">Air Terjun Bajuin</h3>
+          <p class="mb-1 font-weight-bold">Senin - Kamis : <span class="font-weight-normal pl-2 text-muted">09:00 - 15:00 WITA</span></p>
+          <p class="mb-1 font-weight-bold">Jum'at : <span class="font-weight-normal pl-2 text-muted">02:00 - 16:00 WITA</span></p>
+          <p class="mb-1 font-weight-bold">Sabtu - Minggu : <span class="font-weight-normal pl-2 text-muted">09:00 - 17:00 WITA</span></p>
+          <a href="#book-table" class="btn btn-primary btn-sm w-md mt-4">Selengkapnya</a>
+        </div>
+        <div class="col-md-6">
+          <img alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Pigga Landing page" src="<?= base_url('assets/imgs/') ?>arter1.jpg" class="w-100 rounded shadow">
+        </div>
       </div>
-      <div class="col-md-6 order-1 order-sm-first">
-        <img alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Pigga Landing page" src="assets/imgs/river_tubing_1.jpeg" class="w-100 rounded shadow">
-      </div>
-    </div>
+      <div class="section-devider my-6 transparent"></div>
+    <?php endforeach; ?>
+
   </div>
   </div>
 </section>
@@ -89,72 +81,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="col-md-6 my-4">
-              <a href="#" class="pb-3 mx-3 d-block text-dark text-decoration-none border border-left-0 border-top-0 border-right-0">
-                <div class="d-flex">
-                  <div class="flex-grow-1">
-                    Dolorem Exmaiores
-                    <p class="mt-1 mb-0">Numquam dolor dolores molestiae maiores quidem.</p>
-                  </div>
-                  <h6 class="float-right text-primary">$12</h6>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-6 my-4">
-              <a href="#" class="pb-3 mx-3 d-block text-dark text-decoration-none border border-left-0 border-top-0 border-right-0">
-                <div class="d-flex">
-                  <div class="flex-grow-1">
-                    Aperiam incidunt dicta
-                    <p class="mt-1 mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-                  <h6 class="float-right text-primary">$23</h6>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-6 my-4">
-              <a href="#" class="pb-3 mx-3 d-block text-dark text-decoration-none border border-left-0 border-top-0 border-right-0">
-                <div class="d-flex">
-                  <div class="flex-grow-1">
-                    Animi repellat labore
-                    <p class="mt-1 mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-                  <h6 class="float-right text-primary">$32</h6>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-6 my-4">
-              <a href="#" class="pb-3 mx-3 d-block text-dark text-decoration-none border border-left-0 border-top-0 border-right-0">
-                <div class="d-flex">
-                  <div class="flex-grow-1">
-                    Quo ipsum similique
-                    <p class="mt-2 mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-                  <h6 class="float-right text-primary">$17</h6>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-6 my-4">
-              <a href="#" class="pb-3 mx-3 d-block text-dark text-decoration-none border border-left-0 border-top-0 border-right-0">
-                <div class="d-flex">
-                  <div class="flex-grow-1">
-                    Est nam tempore
-                    <p class="mt-2 mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-                  <h6 class="float-right text-primary">$21</h6>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-6 my-4">
-              <a href="#" class="pb-3 mx-3 d-block text-dark text-decoration-none border border-left-0 border-top-0 border-right-0">
-                <div class="d-flex">
-                  <div class="flex-grow-1">
-                    Nesciunt ab veniam
-                    <p class="mt-2 mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-                  <h6 class="float-right text-primary">$10</h6>
-                </div>
-              </a>
-            </div> -->
         <a href="https://www.youtube.com/channel/UC0FOg4GOkhSWp8PADYpNPow" target="_blank" class="btn btn-primary mt-4">Selengkapnya</a>
       </div>
     </div>
@@ -220,7 +146,7 @@
         <img src="assets/imgs/join.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Pigga Landing page" class="w-100 rounded shadow">
       </div>
       <div class="col-md-6">
-        <form class="user" action="<?= base_url('kelola_pengguna/tambahDataPengguna') ?>" method="POST">
+        <form class="user" action="<?= base_url('beranda/tambahDataPengajuanWisata') ?>" method="POST">
 
           <div class="form-group">
             <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="Nama Lengkap" required>
@@ -231,7 +157,7 @@
           </div>
 
           <div class="form-group">
-            <input type="" class="form-control" id="nomer_wa" name="nomer_wa" placeholder="Nama Wisata" required>
+            <input type="text" class="form-control" id="nomer_wa" name="nomer_wa" placeholder="Nama Wisata" required>
           </div>
 
           <div class="form-group">

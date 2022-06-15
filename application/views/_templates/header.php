@@ -11,11 +11,10 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
 
   <!-- font icons -->
-  <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+  <link href="<?= base_url('assets/vendors/') ?>themify-icons/css/themify-icons.css" rel="stylesheet" type="text/css">
   <!-- Bootstrap + Pigga main styles -->
-  <link rel="stylesheet" href="assets/css/pigga.css">
+  <link rel="stylesheet" href="<?= base_url('assets/css/') ?>pigga.css">
 
 </head>
-
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">

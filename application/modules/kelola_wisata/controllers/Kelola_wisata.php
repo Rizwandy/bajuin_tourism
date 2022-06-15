@@ -18,12 +18,25 @@ class Kelola_wisata extends MX_Controller
     )->row_array();
 
     $data['view'] = $this->M_kelola_wisata->readDataWisata();
+    $data['view'] = $this->M_kelola_wisata->readDataMenuWisata();
     $data['kategori_status_wisata'] = $this->M_kelola_wisata->readDataStatusWisata();
 
     $this->load->view('_templates/header', $data);
     $this->load->view('_templates/sidebar', $data);
     $this->load->view('_templates/navbar', $data);
     $this->load->view('kelola_wisata/v_backend_wisata', $data);
+    $this->load->view('kelola_wisata/v_frontend_wisata', $data);
+    $this->load->view('_templates/footer');
+  }
+
+
+  public function DetailWisata($id)
+  {
+    $data['view'] = $this->M_kelola_wisata->readDataDetailWisata($id);
+
+    $this->load->view('_templates/header', $data);
+    $this->load->view('_templates/navbar', $data);
+    $this->load->view('kelola_wisata/v_detail_wisata', $data);
     $this->load->view('_templates/footer');
   }
 

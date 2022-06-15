@@ -18,6 +18,24 @@ class M_kelola_wisata extends CI_Model
     return $this->db->get('status_wisata');
   }
 
+  public function readDataMenuWisata()
+  {
+    $this->db->select('*');
+    $this->db->from('wisata');
+    $this->db->where('id_status_wisata', 1);
+    $query = $this->db->get();
+    return $query;
+  }
+
+  public function readDataDetailWisata($id)
+  {
+    $this->db->select('*');
+    $this->db->from('wisata');
+    $this->db->where('id_wisata', $id);
+    $query = $this->db->get();
+    return $query;
+  }
+
   public function insertDataWisata()
   {
     $kode = $this->db->query('SELECT RIGHT(id_wisata, 5) as kode FROM wisata ORDER BY id_wisata DESC LIMIT 1')->result()[0]->kode + 1;
