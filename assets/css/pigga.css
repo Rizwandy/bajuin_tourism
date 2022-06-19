@@ -12737,7 +12737,7 @@ section.has-img-bg:after {
   font-size: 12px;
   color: #fff;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  opacity: 1;
+  opacity: 8;
 }
 
 .slick-dots li.slick-active button:before {

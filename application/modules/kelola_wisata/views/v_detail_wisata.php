@@ -36,7 +36,7 @@
 
                     <div class="col-md-10 pb-3 mx-3 d-block text-dark text-decoration-none border border-left-0 border-top-0 border-right-0 my-4">
                         <h5 class="text-dark text-center">Galeri</h5>
-                        <div class="slider">
+                        <div class="slider embed-responsive embed-responsive-1by2">
                             <div>
                                 <a href="#">
                                     <img src="<?= base_url('assets/imgs/') ?>chef-1.jpg" alt="Image 1">
