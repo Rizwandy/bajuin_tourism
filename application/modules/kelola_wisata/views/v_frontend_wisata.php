@@ -37,8 +37,10 @@
           <center>
             <h6 class="section-subtitle">Wisata</h6>
             <h3 class="section-title"><?= $res->nama_wisata ?></h3>
-            <div class="col-md-6">
-              <img alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Pigga Landing page" src="<?= base_url('assets/imgs/') ?>arter1.jpg" class="w-100 rounded shadow">
+            <div class="embed-responsive embed-responsive-1by2 align-items-center">
+              <a href="<?= base_url('kelola_wisata/detailWisata/') ?><?= $res->id_wisata ?>">
+                <img style="height: 300px; width: 600px;" src="<?= base_url('assets/imgs/foto_wisata/') . $res->foto_sampul ?>">
+              </a>
             </div>
             <br>
             <p class="col-md-8 text-justify"><?= $res->deskripsi_wisata ?></span></p>

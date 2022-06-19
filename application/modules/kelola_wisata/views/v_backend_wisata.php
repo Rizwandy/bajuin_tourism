@@ -43,8 +43,10 @@
               <tr>
                 <td><?= $res->nama_wisata ?></td>
                 <td><?= $res->deskripsi_wisata ?></td>
-                <td><?= $res->foto_sampul ?></td>
                 <td><?= $res->alamat ?></td>
+                <td align="center">
+                  <img style="height: 130px; width: 200px;" src="<?= base_url('assets/imgs/foto_wisata/') . $res->foto_sampul ?>">
+                </td>
                 <td><?= $res->longitude ?></td>
                 <td><?= $res->latitude ?></td>
                 <td><span>

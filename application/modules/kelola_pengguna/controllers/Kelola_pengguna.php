@@ -33,6 +33,7 @@ class Kelola_pengguna extends MX_Controller
       'user',
       ['username' => $this->session->userdata('username')]
     )->row_array();
+
     $data['view'] = $this->M_kelola_pengguna->readDataPengguna();
     $this->load->view('_templates/backend_header', $data);
     $this->load->view('_templates/sidebar', $data);

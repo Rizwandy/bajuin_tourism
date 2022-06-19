@@ -22,6 +22,5 @@ class Dashboard extends MX_Controller
     $this->load->view('_templates/sidebar', $data);
     $this->load->view('_templates/backend_navbar', $data);
     $this->load->view('dashboard/v_dashboard', $data);
-    $this->load->view('_templates/backend_footer', $data);
   }
 }
