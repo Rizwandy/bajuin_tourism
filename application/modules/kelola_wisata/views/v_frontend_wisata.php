@@ -4,8 +4,6 @@
     <img src="<?= base_url('assets/imgs/') ?>logo.png" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Pigga Landing page" class="logo">
     <h1 class="subtitle">Menu</h1>
     <h1 class="title">WISATA</h1>
-    <p>Bajuin Tourism merupakan sebuah media penyedia informasi terlengkap tentang wisata yang ada di kecamatan Bajuin</p>
-    <a class="btn btn-primary mt-3" href="<?= base_url('beranda/wisata') ?>">JELAJAHI</a>
   </div>
 </header>
 <!-- End Of Page Header -->
@@ -22,7 +20,6 @@
     <div class="embed-responsive embed-responsive-1by2">
       <div id="mapid"></div>
     </div>
-    <br>
     <!-- Make sure you put this AFTER Leaflet's CSS -->
 
   </div>
@@ -30,50 +27,32 @@
 <!-- End OF Lokasi Section -->
 
 <!-- Wisata Section -->
-<section id="wisata">
+<section id="wisata" class="" has-img-bg>
   <div class="container">
     <?php
     foreach ($view->result() as $res) :
     ?>
-      <div class="row align-items-center">
-        <div class="col-md-6">
-
-          <h6 class="section-subtitle">Wisata</h6>
-          <h3 class="section-title"><?= $res->nama_wisata ?></h3>
-          <p class="mb-1"><?= $res->deskripsi_wisata ?></span></p>
-          <a href="<?= base_url('kelola_wisata/DetailWisata/') ?><?= $res->id_wisata ?>" class="btn btn-primary btn-sm w-md mt-4">Selengkapnya</a>
-        </div>
-        <div class="col-md-6">
-          <img alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Pigga Landing page" src="<?= base_url('assets/imgs/') ?>arter1.jpg" class="w-100 rounded shadow">
+      <div class="row-2 align-items-center">
+        <div class="col-md">
+          <center>
+            <h6 class="section-subtitle">Wisata</h6>
+            <h3 class="section-title"><?= $res->nama_wisata ?></h3>
+            <div class="col-md-6">
+              <img alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Pigga Landing page" src="<?= base_url('assets/imgs/') ?>arter1.jpg" class="w-100 rounded shadow">
+            </div>
+            <br>
+            <p class="col-md-8 text-justify"><?= $res->deskripsi_wisata ?></span></p>
+            <a href="<?= base_url('kelola_wisata/detailWisata/') ?><?= $res->id_wisata ?>" class="btn btn-primary btn-sm w-md mt-4">Selengkapnya</a>
         </div>
       </div>
-      <div class="section-devider my-6 transparent"></div>
+      </center>
+      <div class="section-devider my-4 transparent"></div>
     <?php endforeach; ?>
 
   </div>
   </div>
 </section>
 <!-- End OF Wisata Section -->
-
-
-<!-- Prefooter Section  -->
-<div class="py-4 border border-lighter border-bottom-0 border-left-0 border-right-0 bg-dark">
-  <div class="container">
-    <div class="row justify-content-between align-items-center text-center">
-      <div class="col-md-3 text-md-left mb-3 mb-md-0">
-        <img src="<?= base_url('assets/imgs/') ?>navbar-brand.png" width="100" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Pigga Landing page" class="mb-0">
-      </div>
-      <div class="col-md-9 text-md-right">
-        <a href="#" class="px-3"><small class="font-weight-bold">About</small></a>
-        <a href="#" class="px-3"><small class="font-weight-bold">Contact</small></a>
-        <a href="components.html" class="pl-3"><small class="font-weight-bold">Components</small></a>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- End of PreFooter Section -->
-
-
 
 </body>
 <!-- core  -->
@@ -92,7 +71,7 @@
   var mymap = L.map('mapid').setView([-3.703877, 114.884904], 11);
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    attribution: '',
     maxZoom: 20,
     id: 'mapbox/streets-v11',
     tileSize: 512,
@@ -114,7 +93,7 @@
     var titik = L.marker([<?= $res->longitude ?>, <?= $res->latitude ?>], {
       icon: iconMarker
     }).addTo(mymap).bindTooltip("<?= $res->nama_wisata ?>").openPopup();
-    titik.url = "buki/puskesmas_buki.php";
+    titik.url = "<?= base_url('kelola_wisata/detailWisata/') ?><?= $res->id_wisata ?>";
     titik.on('click', function() {
       window.location = (this.url);
     });

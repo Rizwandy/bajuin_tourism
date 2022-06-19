@@ -1,3 +1,20 @@
+<!-- Prefooter Section  -->
+<div class="py-4 border border-lighter border-bottom-0 border-left-0 border-right-0 bg-dark">
+  <div class="container">
+    <div class="row justify-content-between align-items-center text-center">
+      <div class="col-md-3 text-md-left mb-3 mb-md-0">
+        <img src="<?= base_url('assets/imgs/') ?>navbar-brand.png" width="100" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Pigga Landing page" class="mb-0">
+      </div>
+      <div class="col-md-9 text-md-right">
+        <a href="#" class="px-3"><small class="font-weight-bold">About</small></a>
+        <a href="#" class="px-3"><small class="font-weight-bold">Contact</small></a>
+        <a href="components.html" class="pl-3"><small class="font-weight-bold">Components</small></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of PreFooter Section -->
+
 <!-- Page Footer -->
 <footer class="border border-dark border-left-0 border-right-0 border-bottom-0 p-4 bg-dark">
   <div class="container">

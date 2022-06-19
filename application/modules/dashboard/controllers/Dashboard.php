@@ -18,9 +18,10 @@ class Dashboard extends MX_Controller
       ['username' => $this->session->userdata('username')]
     )->row_array();
 
-    $this->load->view('_templates/header', $data);
+    $this->load->view('_templates/backend_header', $data);
     $this->load->view('_templates/sidebar', $data);
-    $this->load->view('_templates/navbar', $data);
+    $this->load->view('_templates/backend_navbar', $data);
     $this->load->view('dashboard/v_dashboard', $data);
+    $this->load->view('_templates/backend_footer', $data);
   }
 }

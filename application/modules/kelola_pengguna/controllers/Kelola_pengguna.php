@@ -19,11 +19,11 @@ class Kelola_pengguna extends MX_Controller
 
     $data['view'] = $this->M_kelola_pengguna->readDataPengguna();
     $data['kategori_status_user'] = $this->M_kelola_pengguna->readDataStatusPengguna();
-    $this->load->view('_templates/header', $data);
+    $this->load->view('_templates/backend_header', $data);
     $this->load->view('_templates/sidebar', $data);
-    $this->load->view('_templates/navbar', $data);
+    $this->load->view('_templates/backend_navbar', $data);
     $this->load->view('kelola_pengguna/v_kelola_pengguna', $data);
-    $this->load->view('_templates/footer');
+    $this->load->view('_templates/backend_footer');
   }
 
   public function profile()
@@ -34,11 +34,11 @@ class Kelola_pengguna extends MX_Controller
       ['username' => $this->session->userdata('username')]
     )->row_array();
     $data['view'] = $this->M_kelola_pengguna->readDataPengguna();
-    $this->load->view('_templates/header', $data);
+    $this->load->view('_templates/backend_header', $data);
     $this->load->view('_templates/sidebar', $data);
-    $this->load->view('_templates/navbar', $data);
+    $this->load->view('_templates/backend_navbar', $data);
     $this->load->view('kelola_pengguna/v_profile', $data);
-    $this->load->view('_templates/footer');
+    $this->load->view('_templates/backend_footer');
   }
 
   public function ubah_password()
@@ -55,11 +55,11 @@ class Kelola_pengguna extends MX_Controller
     $this->form_validation->set_rules('ulangiPassword', 'Confirm New Password', 'required|trim|min_length[3]|matches[ulangiPassword]');
 
     if ($this->form_validation->run() == false) {
-      $this->load->view('_templates/header', $data);
+      $this->load->view('_templates/backend_header', $data);
       $this->load->view('_templates/sidebar', $data);
-      $this->load->view('_templates/navbar', $data);
+      $this->load->view('_templates/backend_navbar', $data);
       $this->load->view('kelola_pengguna/v_ubah_password', $data);
-      $this->load->view('_templates/footer');
+      $this->load->view('_templates/backend_footer');
     } else {
       $current_password = $this->input->post('password_lama');
       $new_password = $this->input->post('password');

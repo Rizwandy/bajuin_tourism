@@ -29,6 +29,7 @@
               <th>Nama Wisata</th>
               <th>Deskripsi Wisata </th>
               <th>Alamat</th>
+              <th>Foto Sampul</th>
               <th>Longitude</th>
               <th>Latitude</th>
               <th>Status</th>
@@ -42,6 +43,7 @@
               <tr>
                 <td><?= $res->nama_wisata ?></td>
                 <td><?= $res->deskripsi_wisata ?></td>
+                <td><?= $res->foto_sampul ?></td>
                 <td><?= $res->alamat ?></td>
                 <td><?= $res->longitude ?></td>
                 <td><?= $res->latitude ?></td>

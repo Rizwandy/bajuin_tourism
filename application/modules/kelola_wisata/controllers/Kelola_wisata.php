@@ -24,13 +24,29 @@ class Kelola_wisata extends MX_Controller
     $this->load->view('_templates/header', $data);
     $this->load->view('_templates/sidebar', $data);
     $this->load->view('_templates/navbar', $data);
-    $this->load->view('kelola_wisata/v_backend_wisata', $data);
     $this->load->view('kelola_wisata/v_frontend_wisata', $data);
     $this->load->view('_templates/footer');
   }
 
+  public function backend_wisata()
+  {
+    $data['title'] = 'Backend Wisata';
+    $data['user'] = $this->db->get_where(
+      'user',
+      ['username' => $this->session->userdata('username')]
+    )->row_array();
 
-  public function DetailWisata($id)
+    $data['view'] = $this->M_kelola_wisata->readDataWisata();
+    $data['kategori_status_wisata'] = $this->M_kelola_wisata->readDataStatusWisata();
+
+    $this->load->view('_templates/backend_header', $data);
+    $this->load->view('_templates/sidebar', $data);
+    $this->load->view('_templates/backend_navbar', $data);
+    $this->load->view('kelola_wisata/v_backend_wisata', $data);
+    $this->load->view('_templates/backend_footer');
+  }
+
+  public function detailWisata($id)
   {
     $data['view'] = $this->M_kelola_wisata->readDataDetailWisata($id);
 

@@ -19,6 +19,11 @@ class M_beranda extends CI_Model
         return $this->db->get('wisata');
     }
 
+    public function readDataAcara()
+    {
+        return $this->db->get('acara');
+    }
+
     public function readDataPetaWisata()
     {
         $this->db->select('*');

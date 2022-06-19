@@ -41,18 +41,34 @@ class M_kelola_wisata extends CI_Model
     $kode = $this->db->query('SELECT RIGHT(id_wisata, 5) as kode FROM wisata ORDER BY id_wisata DESC LIMIT 1')->result()[0]->kode + 1;
     $buat_id = str_pad($kode, 5, "0", STR_PAD_LEFT);
     $id_wisata = "OW-$buat_id";
+    $id = $this->input->post('id_wisata', true);
+
+    $foto = $_FILES['foto'];
+    if ($foto !== NULL) {
+      $config['upload_path'] = './assets/img/profile/';
+      $config['allowed_types'] = 'jpg|png|gif';
+
+      $this->load->library('upload', $config);
+      if ($this->upload->do_upload('foto') == NULL) {
+        $foto = $this->db->get_where('wisata', ['id_wisata' => $id])->row_array()['gambar'];
+      } else {
+        $foto = $this->upload->data('file_name');
+      }
+    }
 
     $data = [
       'id_wisata' => $id_wisata,
       'nama_wisata' => htmlspecialchars($this->input->post('nama_wisata', true)),
       'deskripsi_wisata' => htmlspecialchars($this->input->post('deskripsi_wisata', true)),
       'alamat' => htmlspecialchars($this->input->post('alamat', true)),
+      'gambar' => $foto,
       'longitude' => htmlspecialchars($this->input->post('longitude', true)),
       'latitude' => htmlspecialchars($this->input->post('latitude', true)),
       'id_user' => 1,
       'id_status_wisata' => 1
     ];
 
+    $this->db->where('id_wisata', $id);
     $this->db->insert('wisata', $data);
   }
 

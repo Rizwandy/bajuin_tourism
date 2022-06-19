@@ -27,11 +27,31 @@ class Beranda extends CI_Controller
 
     public function wisata()
     {
-        $data['view'] = $this->M_beranda->readDataPetaWisata();
+        $data['view'] = $this->M_beranda->readDataWisata();
 
         $this->load->view('_templates/header', $data);
         $this->load->view('_templates/navbar', $data);
         $this->load->view('kelola_wisata/v_frontend_wisata');
+        $this->load->view('_templates/footer');
+    }
+
+    public function acara()
+    {
+        $data['view'] = $this->M_beranda->readDataAcara();
+
+        $this->load->view('_templates/header', $data);
+        $this->load->view('_templates/navbar', $data);
+        $this->load->view('kelola_acara/v_kelola_frontend_acara');
+        $this->load->view('_templates/footer');
+    }
+
+    public function tentang()
+    {
+        $data['view'] = $this->M_beranda->readDataWisata();
+
+        $this->load->view('_templates/header', $data);
+        $this->load->view('_templates/navbar', $data);
+        $this->load->view('kelola_tentang/v_tentang');
         $this->load->view('_templates/footer');
     }
 

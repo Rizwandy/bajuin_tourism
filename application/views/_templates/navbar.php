@@ -7,12 +7,13 @@
       </a>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link text-primary" href="#home">Website : <span class="pl-2 text-muted">Dinas Pariwisata Tanah Laut</span></a>
+          <a class="nav-link text-primary" href="#home">JOIN US</span></a>
         </li>
       </ul>
     </div>
   </nav>
   <!-- End of First Navigation -->
+
   <!-- Second Navigation -->
   <nav class="nav-second navbar custom-navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
     <div class="container">
@@ -22,16 +23,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#home">BERANDA</a>
+            <a class="nav-link" href="<?= base_url('beranda') ?>">BERANDA</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#wisata">DESTINASI</a>
+            <a class="nav-link" href="<?= base_url('beranda/wisata') ?>">DESTINASI</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#acara">ACARA</a>
+            <a class="nav-link" href="<?= base_url('beranda/acara') ?>">ACARA</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#tentang">TENTANG</a>
+            <a class="nav-link" href="<?= base_url('beranda/tentang') ?>">TENTANG</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?= base_url('login') ?>">LOGIN</a>
