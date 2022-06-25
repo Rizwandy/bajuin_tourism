@@ -31,6 +31,7 @@
               <th>Deskripsi Wisata </th>
               <th>Alamat</th>
               <th>Foto Sampul</th>
+              <th>Foto Galeri</th>
               <th>Longitude</th>
               <th>Latitude</th>
               <th>Status</th>
@@ -51,6 +52,7 @@
                     <td align="center">
                       <img style="height: 80%; width: 80%;" src="<?= base_url('assets/imgs/foto_wisata/sampul/') . $res->foto_sampul ?>">
                     </td>
+                    <td><?= $res->foto_galeri ?></td>
                     <td><?= $res->longitude ?></td>
                     <td><?= $res->latitude ?></td>
                     <td><span>
@@ -70,6 +72,9 @@
                         </button>
                         <button type="button" data-toggle="modal" data-target="#ubahModal<?= $res->id_wisata ?>" class="btn btn-warning btn-sm">
                           <i class="fas fa-edit"></i>
+                        </button>
+                        <button type="button" data-toggle="modal" data-target="#ubahModalGaleri<?= $res->id_wisata ?>" class="btn btn-info btn-sm">
+                          <i class="fas fa-solid fa-images"></i>
                         </button>
                         <button type="button" data-toggle="modal" data-target="#hapusModal<?= $res->id_wisata ?>" class="btn btn-danger btn-sm">
                           <i class="fas fa-trash"></i>
@@ -104,52 +109,54 @@
           </button>
         </div>
 
-        <?= form_open_multipart('kelola_acara/tambahDataAcara') ?>
-        <form class="user" action="<?= base_url('kelola_wisata/tambahDatawisata') ?>" method="POST">
-          <div class="modal-body">
+        <?= form_open_multipart('kelola_wisata/tambahDataWisata') ?>
 
-            <div class="form-group">
-              <label for="nama_wisata">Nama Wisata</label>
-              <input type="text" class="form-control" id="nama_wisata" name="nama_wisata" required>
-            </div>
+        <div class="modal-body">
 
-            <div class="form-group">
-              <label for="deskrikpsi_wisata">Deskripsi Wisata</label>
-              <textarea class="form-control" name="deskripsi_wisata" id="" cols="30" rows="10" required></textarea>
-            </div>
+          <div class="form-group">
+            <label for="nama_wisata">Nama Wisata</label>
+            <input type="text" class="form-control" id="nama_wisata" name="nama_wisata" required>
+          </div>
 
-            <div class="form-group">
-              <label for="alamat">Alamat</label>
-              <input type="text" class="form-control" id="alamat" name="alamat" required>
-            </div>
+          <div class="form-group">
+            <label for="deskrikpsi_wisata">Deskripsi Wisata</label>
+            <textarea class="form-control" name="deskripsi_wisata" id="" cols="30" rows="10" required></textarea>
+          </div>
 
-            <div class="form-group">
-              <label for="foto_sampul">Foto Sampul</label>
-              <div class="input-group">
-                <div class="custom-file">
-                  <!-- Untuk mengupload gambar -->
-                  <input type="file" class="custom-fileinput" id="foto_sampul" name="foto_sampul_wisata">
-                </div>
+          <div class="form-group">
+            <label for="alamat">Alamat</label>
+            <input type="text" class="form-control" id="alamat" name="alamat" required>
+          </div>
+
+          <div class="form-group">
+            <label for="foto_sampul">Foto Sampul</label>
+            <div class="input-group">
+              <div class="custom-file">
+                <!-- Untuk mengupload gambar -->
+                <input type="file" class="custom-fileinput" id="foto_sampul" name="foto_sampul_wisata">
               </div>
             </div>
-
-            <div class="form-group">
-              <label for="longitude">Longitude</label>
-              <input type="text" class="form-control" id="longitude" name="longitude" required>
-            </div>
-
-            <div class="form-group">
-              <label for="latitude">Latitude</label>
-              <input type="text" class="form-control" id="latitude" name="latitude" required>
-            </div>
-
-
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-            <button type="submit" class="btn btn-primary">Tambah</button>
+
+
+          <div class="form-group">
+            <label for="longitude">Longitude</label>
+            <input type="text" class="form-control" id="longitude" name="longitude" required>
           </div>
-          <?= form_close() ?>
+
+          <div class="form-group">
+            <label for="latitude">Latitude</label>
+            <input type="text" class="form-control" id="latitude" name="latitude" required>
+          </div>
+
+          <a target="_blank" href="" data-toggle="modal" data-target="#infoModal">Cara menambahkan Longitude dan Latitude &rarr;</a>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+          <button type="submit" class="btn btn-primary">Tambah</button>
+        </div>
+        <?= form_close() ?>
       </div>
     </div>
   </div>
@@ -272,6 +279,50 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
           <a href="<?= base_url("kelola_wisata/hapusDatawisata/$res->id_wisata") ?>" class="btn btn-danger">Hapus</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Info Modal-->
+  <div class="modal fade" id="infoModal<?= $res->id_wisata ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span style="font-size: 20px;">
+            <i class="fas fa-circle-info mr-2"></i>
+          </span>
+          <h5 class="modal-title" id="exampleModalCenterTitle">Info cara menambahkan Longitude dan Latitude!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            <lo class="text-justify">
+              <li>
+                Buka aplikasi Google Maps di ponsel
+              </li>
+              <li>
+                Pilih atau cari lokasi yang hendak ditemukan titik koordinatnya.
+              </li>
+              <li>
+                Setelah lokasi ditemukan, buka drop down menu yang tertera di bawah tampilan peta.
+              </li>
+              <li>
+                Gulir ke bawah hingga menemukan deretan angka yang tersusun sesuai dengan format titik koordinat, sebagaimana telah diterangkan sebelumnya.
+              </li>
+              <li>
+                Kemudian, ketuk titik koordinat tersebut dan aplikasi bakal otomatis membuatkan salinannya
+              </li>
+              <li>
+                Silakan tempel salinan titik koordinat tersebut pada kolom pengisian data alamat bila dibutuhkan.
+              </li>
+            </lo>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
         </div>
       </div>
     </div>

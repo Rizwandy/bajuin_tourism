@@ -73,7 +73,7 @@ class M_kelola_wisata extends CI_Model
       'longitude' => htmlspecialchars($this->input->post('longitude', true)),
       'latitude' => htmlspecialchars($this->input->post('latitude', true)),
       'id_user' => 2,
-      'id_status_wisata' => 3
+      'id_status_wisata' => 2
     ];
 
     $this->db->where('id_wisata', $id);

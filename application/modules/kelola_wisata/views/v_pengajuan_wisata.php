@@ -46,7 +46,6 @@
                   <td align="center">
                     <img style="height: 130px; width: 200px;" src="<?= base_url('assets/imgs/foto_wisata/') . $res->foto_sampul ?>">
                   </td>
-                  <td><span>
                   <td align="center">
                     <img style="height: 130px; width: 200px;" src="<?= base_url('assets/imgs/foto_wisata/') . $res->foto_galeri ?>">
                   </td>
