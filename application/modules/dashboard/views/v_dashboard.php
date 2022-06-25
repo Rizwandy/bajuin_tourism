@@ -18,7 +18,7 @@
               <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
             </div>
             <div class="col-auto">
-              <a href="kelola_wisata"><i class="fas fa-book fa-4x text-gray-800 d-md-inline"></i></a>
+              <a href="kelola_wisata/backend_wisata"><i class="fas fa-solid fa-map fa-4x text-gray-800"></i></a>
             </div>
           </div>
         </div>
@@ -32,11 +32,11 @@
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
               <div class="text-x font-weight-bold text-warning text-uppercase mb-1">
-                PENGELOLA</div>
+                ACARA</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800"> </div>
             </div>
             <div class="col-auto">
-              <a href="kelola_pengguna"><i class="fas fa-users fa-4x text-gray-800"></i></a>
+              <a href="kelola_pengguna"><i class="fas fa-solid fa-calendar-check fa-4x text-gray-800"></i></a>
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
               <div class="text-x font-weight-bold text-secondary text-uppercase mb-1">
-                PETUGAS </div>
+                PENGELOLA </div>
               <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
             </div>
             <div class="col-auto">

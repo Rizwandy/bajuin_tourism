@@ -1,30 +1,26 @@
-<!-- Detai Wisata Section -->
+<!-- Detai Acara Section -->
 <section class="has-img-bg">
     <div class="container">
         <?php
         foreach ($view->result() as $res) :
         ?>
-            <h6 class="section-subtitle text-center">Wisata</h6>
-            <h3 class="section-title mb-6 text-center"><?= $res->nama_wisata ?></h3>
+            <h6 class="section-subtitle text-center">Acara</h6>
+            <h3 class="section-title mb-6 text-center"><?= $res->nama_acara ?></h3>
         <?php endforeach; ?>
 
         <div class="card bg-light">
             <div class="card-body px-4 pb-4 ">
                 <div class="row ">
 
+                    <div class="col-md-12 d-block text-dark text-decoration-none border border-left-0 border-top-0 border-right-0 my-4">
+                        <h5 class="text-dark">Keterangan</h5>
+                        <p class="text-dark">Sabtu & Minggu : <span class="font-weight-normal text-dark">09:00 - 7:00 WITA</span></p>
+                        <p class="text-dark">Tempat : <span class="font-weight-normal text-dark">Lapangan Air terjun</span></p>
+                    </div>
+
                     <div class="col-md-12 text-decoration-none border border-left-0 border-top-0 border-right-0 my-4">
                         <h5 class="text-dark text-center">Deskripsi</h5>
-                        <p class="text-dark text-justify"><?= $res->deskripsi_wisata ?></span></p>
-                    </div>
-
-                    <div class="col-md-12 d-block text-dark text-decoration-none border border-left-0 border-top-0 border-right-0 my-4">
-                        <h5 class="text-dark">Jam Operasional</h5>
-                        <p class="text-dark">Sabtu & Minggu : <span class="font-weight-normal text-dark">09:00 - 7:00 WITA</span></p>
-                    </div>
-
-                    <div class="col-md-12 d-block text-dark text-decoration-none border border-left-0 border-top-0 border-right-0 my-4">
-                        <h5 class="text-dark">Fasilitas</h5>
-                        <p class="text-dark">Sabtu & Minggu : <span class="font-weight-normal text-dark">09:00 - 7:00 WITA</span></p>
+                        <p class="text-dark text-justify"><?= $res->deskripsi_acara ?></span></p>
                     </div>
 
                     <div class="swiper mySwiper">
@@ -47,15 +43,13 @@
                         </div>
                     </div>
 
-
-
                 </div>
             </div>
         </div>
 
     </div>
 </section>
-<!-- End of Detail Wisata Section -->
+<!-- End of Detail Acara Section -->
 
 </body>
 <!-- core  -->

@@ -78,12 +78,12 @@ class M_kelola_pengguna extends CI_Model
 
   public function updateProfile()
   {
-    $id = $this->input->post('iduser', true);
+    $id = $this->input->post('id_user', true);
 
     $foto = $_FILES['foto'];
     if ($foto !== NULL) {
       $config['upload_path'] = './assets/img/profile/';
-      $config['allowed_types'] = 'jpg|png|gif';
+      $config['allowed_types'] = 'jpg|png|gif|jpeg';
 
       $this->load->library('upload', $config);
       if ($this->upload->do_upload('foto') == NULL) {
@@ -95,7 +95,7 @@ class M_kelola_pengguna extends CI_Model
 
     $data = [
       'username' => htmlspecialchars(strtolower($this->input->post('username', true))),
-      'nama_user' => htmlspecialchars($this->input->post('nama', true)),
+      'nama_user' => htmlspecialchars($this->input->post('nama_user', true)),
       'gambar' => $foto,
       'jenis_kelamin' => htmlspecialchars($this->input->post('jenisKelamin', true)),
     ];

@@ -32,23 +32,25 @@
     <?php
     foreach ($view->result() as $res) :
     ?>
-      <div class="row-2 align-items-center">
-        <div class="col-md">
-          <center>
-            <h6 class="section-subtitle">Wisata</h6>
-            <h3 class="section-title"><?= $res->nama_wisata ?></h3>
-            <div class="embed-responsive embed-responsive-1by2 align-items-center">
-              <a href="<?= base_url('kelola_wisata/detailWisata/') ?><?= $res->id_wisata ?>">
-                <img style="height: 300px; width: 600px;" src="<?= base_url('assets/imgs/foto_wisata/') . $res->foto_sampul ?>">
-              </a>
-            </div>
-            <br>
-            <p class="col-md-8 text-justify"><?= $res->deskripsi_wisata ?></span></p>
-            <a href="<?= base_url('kelola_wisata/detailWisata/') ?><?= $res->id_wisata ?>" class="btn btn-primary btn-sm w-md mt-4">Selengkapnya</a>
+      <?php if ($res->id_status_wisata == 1) : ?>
+        <div class="row-2 align-items-center">
+          <div class="col-md">
+            <center>
+              <h6 class="section-subtitle">Wisata</h6>
+              <h3 class="section-title"><?= $res->nama_wisata ?></h3>
+              <div class="embed-responsive embed-responsive-1by2 align-items-center">
+                <a href="<?= base_url('kelola_wisata/detailWisata/') ?><?= $res->id_wisata ?>">
+                  <img style="height: 50%; width: 50%;" src="<?= base_url('assets/imgs/foto_wisata/sampul/') . $res->foto_sampul ?>">
+                </a>
+              </div>
+              <br>
+              <p class="col-md-8 text-justify"><?= $res->deskripsi_wisata ?></span></p>
+              <a href="<?= base_url('kelola_wisata/detailWisata/') ?><?= $res->id_wisata ?>" class="btn btn-primary btn-sm w-md mt-4">Selengkapnya</a>
+          </div>
         </div>
-      </div>
-      </center>
-      <div class="section-devider my-4 transparent"></div>
+        </center>
+        <div class="section-devider my-4 transparent"></div>
+      <?php endif; ?>
     <?php endforeach; ?>
 
   </div>
@@ -92,13 +94,15 @@
   <?php
   foreach ($view->result() as $res) :
   ?>
-    var titik = L.marker([<?= $res->longitude ?>, <?= $res->latitude ?>], {
-      icon: iconMarker
-    }).addTo(mymap).bindTooltip("<?= $res->nama_wisata ?>").openPopup();
-    titik.url = "<?= base_url('kelola_wisata/detailWisata/') ?><?= $res->id_wisata ?>";
-    titik.on('click', function() {
-      window.location = (this.url);
-    });
+    <?php if ($res->id_status_wisata == 1) : ?>
+      var titik = L.marker([<?= $res->longitude ?>, <?= $res->latitude ?>], {
+        icon: iconMarker
+      }).addTo(mymap).bindTooltip("<?= $res->nama_wisata ?>").openPopup();
+      titik.url = "<?= base_url('kelola_wisata/detailWisata/') ?><?= $res->id_wisata ?>";
+      titik.on('click', function() {
+        window.location = (this.url);
+      });
+    <?php endif; ?>
   <?php endforeach; ?>
 
   // ? Kecamatan Bajuin

@@ -19,16 +19,15 @@
       <?= form_open_multipart('kelola_pengguna/ubahProfile') ?>
 
       <input type="hidden" id="username" name="username" value="<?= $user['username'] ?>">
-      <input type="hidden" id="iduser" name="iduser" value="<?= $user['id_user'] ?>">
-
+      <input type="hidden" id="id_user" name="id_user" value="<?= $user['id_user'] ?>">
       <div class="form-group">
         <label for="username">Username</label>
         <input type="text" class="form-control" value="<?= $user['username'] ?>" disabled>
       </div>
 
       <div class="form-group">
-        <label for="nama">Nama</label>
-        <input type="text" class="form-control" id="nama" name="nama" value="<?= $user['nama_user'] ?>" required>
+        <label for="nama_user">Nama</label>
+        <input type="text" class="form-control" id="nama_user" name="nama_user" value="<?= $user['nama_user'] ?>" required>
       </div>
 
 

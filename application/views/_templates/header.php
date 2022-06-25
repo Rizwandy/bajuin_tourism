@@ -12,8 +12,13 @@
 
   <!-- font icons -->
   <link href="<?= base_url('assets/vendors/') ?>themify-icons/css/themify-icons.css" rel="stylesheet" type="text/css">
+
   <!-- Bootstrap + Pigga main styles -->
   <link rel="stylesheet" href="<?= base_url('assets/css/') ?>pigga.css">
+
+  <!-- swiperjs Slide-->
+  <link rel="stylesheet" href="<?= base_url('assets/css/') ?>swiper-bundle.min.css" />
+
 
 </head>
 

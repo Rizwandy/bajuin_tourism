@@ -51,7 +51,7 @@ class Beranda extends CI_Controller
 
         $this->load->view('_templates/header', $data);
         $this->load->view('_templates/navbar', $data);
-        $this->load->view('kelola_tentang/v_tentang');
+        $this->load->view('beranda/v_tentang');
         $this->load->view('_templates/footer');
     }
 

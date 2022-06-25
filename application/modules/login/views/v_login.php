@@ -48,6 +48,15 @@
 
                   </form>
 
+                  <hr>
+
+                  <div class="text-center">
+                    <a class="small" href="<?= base_url('auth/forgotpassword'); ?>">Lupa Password?</a>
+                  </div>
+                  <div class="text-center">
+                    <a class="small" href="<?= base_url('login/registration'); ?>">Buat akun baru!</a>
+                  </div>
+
                 </div>
               </div>
             </div>

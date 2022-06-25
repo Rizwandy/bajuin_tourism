@@ -7,7 +7,7 @@
       </a>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link text-primary" href="#home">JOIN US</span></a>
+          <a class="nav-link text-primary" href="mailto:bajuintourism@gmail.com?subject=Feedback&body=Message"><span class="ti-email"> </span>bajuintourism@gmail.com</span></a>
         </li>
       </ul>
     </div>
@@ -40,7 +40,7 @@
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="btn btn-primary btn-sm scroll-to-top rounded" href="#join">
+            <a class="btn btn-primary btn-sm scroll-to-top rounded" href="<?= base_url('beranda/tentang/#join') ?>">
               JOIN US
             </a>
           </li>

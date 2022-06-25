@@ -56,16 +56,29 @@ class Kelola_wisata extends MX_Controller
     $this->load->view('_templates/footer');
   }
 
-  public function readDataPengguna()
+  public function Pengajuan_Wisata()
   {
-    return $this->db->get('user');
+    $data['title'] = 'Pengajuan Wisata';
+    $data['user'] = $this->db->get_where(
+      'user',
+      ['username' => $this->session->userdata('username')]
+    )->row_array();
+
+    $data['view'] = $this->M_kelola_wisata->readDataWisata();
+    $data['kategori_status_wisata'] = $this->M_kelola_wisata->readDataStatusWisata();
+
+    $this->load->view('_templates/backend_header', $data);
+    $this->load->view('_templates/sidebar', $data);
+    $this->load->view('_templates/backend_navbar', $data);
+    $this->load->view('kelola_wisata/v_pengajuan_wisata', $data);
+    $this->load->view('_templates/backend_footer');
   }
 
   public function tambahDataWisata()
   {
     $this->M_kelola_wisata->insertDataWisata();
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Data Wisata Berhasil Ditambahkan! </div>');
-    redirect('kelola_wisata');
+    redirect('kelola_wisata/backend_wisata');
   }
 
   public function ubahDataWisata()

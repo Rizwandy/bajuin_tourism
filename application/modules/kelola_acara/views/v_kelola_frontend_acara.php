@@ -14,20 +14,22 @@
     <?php
     foreach ($view->result() as $res) :
     ?>
-      <div class="row-2 align-items-center">
-        <div class="col-md">
-          <center>
-            <h6 class="section-subtitle">Acara</h6>
-            <h3 class="section-title"><?= $res->judul ?></h3>
-            <div class="col-md-6">
-              <a href="<?= base_url('kelola_acara/detailAcara/') ?><?= $res->id_acara ?>">
-                <img alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Pigga Landing page" src="<?= base_url('assets/imgs/foto_event/') ?>campingceria2020.jpg" class="w-100 rounded shadow">
-              </a>
-            </div>
+      <?php if ($res->status_acara == "Aktif") : ?>
+        <div class="row-2 align-items-center">
+          <div class="col-md">
+            <center>
+              <h6 class="section-subtitle">Acara</h6>
+              <h3 class="section-title"><?= $res->nama_acara ?></h3>
+              <div class="embed-responsive embed-responsive-1by2 align-items-center">
+                <a href="<?= base_url('kelola_acara/detailAcara/') ?><?= $res->id_acara ?>">
+                  <img style="height: 40%; width: 40%;" src="<?= base_url('assets/imgs/foto_acara/') . $res->gambar ?>">
+                </a>
+              </div>
+          </div>
         </div>
-      </div>
-      </center>
-      <div class="section-devider my-4 transparent"></div>
+        </center>
+        <div class="section-devider my-4 transparent"></div>
+      <?php endif; ?>
     <?php endforeach; ?>
 
   </div>
