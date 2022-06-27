@@ -2,21 +2,19 @@
 <div class="container-fluid">
 
   <!-- Page Heading -->
-  <h1 class="h3 mt-4 mb-4 text-gray-800">Kelola Wisata</h1>
+  <h1 class="h3 mt-4 mb-4 text-gray-800">Kelola Wisata Admin</h1>
   <div class="card shadow mb-4">
     <div class="card-body">
 
       <!-- Header -->
-      <?php if ($user["id_level_user"] != 3) : ?>
-        <div class="text-right">
-          <button type="button" data-toggle="modal" data-target="#tambahModal" class="btn btn-success btn-icon-split mb-3">
-            <span class="icon text-white-50">
-              <i class="fas fa-plus"></i>
-            </span>
-            <span class="text">Tambah</span>
-          </button>
-        </div>
-      <?php endif; ?>
+      <div class="text-right">
+        <button type="button" data-toggle="modal" data-target="#tambahModal" class="btn btn-success btn-icon-split mb-3">
+          <span class="icon text-white-50">
+            <i class="fas fa-plus"></i>
+          </span>
+          <span class="text">Tambah</span>
+        </button>
+      </div>
 
       <!-- Alert -->
       <?= $this->session->flashdata('message'); ?>
@@ -34,53 +32,49 @@
               <th>Longitude</th>
               <th>Latitude</th>
               <th>Status</th>
-              <?php if ($user["id_level_user"] != 3) : ?>
-                <th>Aksi</th>
-              <?php endif; ?>
+              <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
             <?php foreach ($view->result() as $res) : ?>
               <?php if ($res->id_status_wisata == 1 || $res->id_status_wisata == 4) : ?>
-                <?php if ($res->id_user == $user["id_user"]) : ?>
-                  <tr>
-                    <td><?= $res->nama_wisata ?></td>
-                    <td><?= $res->nama_user ?></td>
-                    <td class="text-justify"><?= $res->deskripsi_wisata ?></td>
-                    <td><?= $res->alamat ?></td>
+                <tr>
+                  <td><?= $res->nama_wisata ?></td>
+                  <td><?= $res->nama_user ?></td>
+                  <td class="text-justify"><?= $res->deskripsi_wisata ?></td>
+                  <td><?= $res->alamat ?></td>
+                  <td align="center">
+                    <img style="height: 80%; width: 80%;" src="<?= base_url('assets/imgs/foto_wisata/sampul/') . $res->foto_sampul ?>">
+                  </td>
+                  <td><?= $res->longitude ?></td>
+                  <td><?= $res->latitude ?></td>
+                  <td><span>
+                      <center>
+                        <?php if ($res->id_status_wisata == 1) : ?>
+                          <a class="badge badge-success">Aktif</a>
+                        <?php elseif ($res->id_status_wisata == 4) : ?>
+                          <a class="badge badge-secondary">Tutup</a>
+                        <?php endif; ?>
+                      </center>
+                    </span>
+                  </td>
+                  <?php if ($user["id_level_user"] != 3) : ?>
                     <td align="center">
-                      <img style="height: 80%; width: 80%;" src="<?= base_url('assets/imgs/foto_wisata/sampul/') . $res->foto_sampul ?>">
+                      <button type="button" data-toggle="modal" data-target="#statusModal<?= $res->id_wisata ?>" class="btn btn-success btn-sm">
+                        <i class="fab fa-stripe-s"></i>
+                      </button>
+                      <button type="button" data-toggle="modal" data-target="#ubahModal<?= $res->id_wisata ?>" class="btn btn-warning btn-sm">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button type="button" data-toggle="modal" data-target="#ubahModalGaleri<?= $res->id_wisata ?>" class="btn btn-info btn-sm">
+                        <i class="fas fa-solid fa-images"></i>
+                      </button>
+                      <button type="button" data-toggle="modal" data-target="#hapusModal<?= $res->id_wisata ?>" class="btn btn-danger btn-sm">
+                        <i class="fas fa-trash"></i>
+                      </button>
                     </td>
-                    <td><?= $res->longitude ?></td>
-                    <td><?= $res->latitude ?></td>
-                    <td><span>
-                        <center>
-                          <?php if ($res->id_status_wisata == 1) : ?>
-                            <a class="badge badge-success">Aktif</a>
-                          <?php elseif ($res->id_status_wisata == 4) : ?>
-                            <a class="badge badge-secondary">Tutup</a>
-                          <?php endif; ?>
-                        </center>
-                      </span>
-                    </td>
-                    <?php if ($user["id_level_user"] != 3) : ?>
-                      <td align="center">
-                        <button type="button" data-toggle="modal" data-target="#statusModal<?= $res->id_wisata ?>" class="btn btn-success btn-sm">
-                          <i class="fab fa-stripe-s"></i>
-                        </button>
-                        <button type="button" data-toggle="modal" data-target="#ubahModal<?= $res->id_wisata ?>" class="btn btn-warning btn-sm">
-                          <i class="fas fa-edit"></i>
-                        </button>
-                        <button type="button" data-toggle="modal" data-target="#ubahModalGaleri<?= $res->id_wisata ?>" class="btn btn-info btn-sm">
-                          <i class="fas fa-solid fa-images"></i>
-                        </button>
-                        <button type="button" data-toggle="modal" data-target="#hapusModal<?= $res->id_wisata ?>" class="btn btn-danger btn-sm">
-                          <i class="fas fa-trash"></i>
-                        </button>
-                      </td>
-                    <?php endif; ?>
-                  </tr>
-                <?php endif; ?>
+                  <?php endif; ?>
+                </tr>
               <?php endif; ?>
             <?php endforeach; ?>
           </tbody>

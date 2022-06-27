@@ -30,7 +30,6 @@
               <th>Deskripsi</th>
               <th>Alamat</th>
               <th>Foto Sampul</th>
-              <th>Foto Galeri</th>
               <th>Status</th>
               <th>Aksi</th>
             </tr>
@@ -44,10 +43,7 @@
                   <td><?= $res->deskripsi_wisata ?></td>
                   <td><?= $res->alamat ?></td>
                   <td align="center">
-                    <img style="height: 130px; width: 200px;" src="<?= base_url('assets/imgs/foto_wisata/') . $res->foto_sampul ?>">
-                  </td>
-                  <td align="center">
-                    <img style="height: 130px; width: 200px;" src="<?= base_url('assets/imgs/foto_wisata/') . $res->foto_galeri ?>">
+                    <img style="height: 130px; width: 200px;" src="<?= base_url('assets/imgs/foto_wisata/sampul/') . $res->foto_sampul ?>">
                   </td>
                   <td><span>
                       <?php if ($res->id_status_wisata == 2) : ?>
@@ -57,19 +53,17 @@
                       <?php endif; ?>
                     </span>
                   </td>
-                  <?php if ($user["id_level_user"] == 1) : ?>
-                    <td align="center">
-                      <button type="button" data-toggle="modal" data-target="#statusModal<?= $res->id_wisata ?>" class="btn btn-success btn-sm">
-                        <i class="fab fa-stripe-s"></i>
-                      </button>
-                      <button type="button" data-toggle="modal" data-target="#ubahModal<?= $res->id_wisata ?>" class="btn btn-warning btn-sm">
-                        <i class="fas fa-edit"></i>
-                      </button>
-                      <button type="button" data-toggle="modal" data-target="#hapusModal<?= $res->id_wisata ?>" class="btn btn-danger btn-sm">
-                        <i class="fas fa-trash"></i>
-                      </button>
-                    </td>
-                  <?php endif; ?>
+                  <td align="center">
+                    <button type="button" data-toggle="modal" data-target="#statusModal<?= $res->id_wisata ?>" class="btn btn-success btn-sm">
+                      <i class="fab fa-stripe-s"></i>
+                    </button>
+                    <button type="button" data-toggle="modal" data-target="#ubahModal<?= $res->id_wisata ?>" class="btn btn-warning btn-sm">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button type="button" data-toggle="modal" data-target="#hapusModal<?= $res->id_wisata ?>" class="btn btn-danger btn-sm">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
                 </tr>
               <?php endif; ?>
             <?php endforeach; ?>

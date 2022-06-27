@@ -30,26 +30,23 @@
                     <div class="swiper mySwiper">
 
                         <div class="swiper-wrapper text-center">
-
                             <div class="swiper-slide">
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
                                 <img style="height: 300px; width: 300px;" src="<?= base_url('assets/imgs/') ?>chef-1.jpg">
                                 <p class="text-dark my-3">CHEF 1</p>
                             </div>
-
                             <div class="swiper-slide">
                                 <img style="height: 300px; width: 300px;" src="<?= base_url('assets/imgs/') ?>chef-2.jpg">
                                 <p class="text-dark my-3">CHEF 2</p>
                             </div>
-
                             <div class="swiper-slide">
                                 <img style="height: 300px; width: 300px;" src="<?= base_url('assets/imgs/') ?>chef-3.jpg">
                                 <p class="text-dark my-3">CHEF 3</p>
                             </div>
-
                         </div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
                     </div>
+
 
 
                 </div>
